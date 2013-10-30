@@ -72,8 +72,9 @@ class Controller
 
 
 
-        if ($this->_validator->isValidLength('naam',1)
-            & $this->_validator->isValidLength('passwoord',1)
+        if ($this->_validator->isValidLength('usernaam',4)
+            & $this->_validator->isValidLength('passwoord',4) & $this->_validator->isValidEmail('email') 
+           
         ) {
            // $this->_userMapper->add($this->_object);
 
@@ -101,8 +102,8 @@ class Controller
 		$naam = $this->_safeParameters['usernaam'];
         $passwoord =  $this->_safeParameters['passwoord'];
 
-        if ($this->_validator->isValidLength('naam',1)
-            & $this->_validator->isValidLength('passwoord',1)
+        if ($this->_validator->isValidLength('usernaam',4)
+            & $this->_validator->isValidLength('passwoord',4)
         ) {
 			
             //$this->_userMapper->isValidUser($this->_object);
@@ -110,6 +111,7 @@ class Controller
 			return 'succes.php';
         } else {
             global $statusMessage;
+
             $this->_statusMessage = $statusMessage;
             return 'home.php';
         }

@@ -1,9 +1,21 @@
 
-#container{
-margin-top:20px;
+.container{
+margin-top:30px;
 }
 
 .navbar{
 background-color:#bf3f34;
 border:1px solid #bf3f34;
 }
+
+.circular {
+	margin-top:-20px;
+	float:right;
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(https://scontent-b-lhr.xx.fbcdn.net/hphotos-prn1/74832_461994608908_8159516_n.jpg) no-repeat;
+	}
+
