@@ -5,7 +5,7 @@
     <meta charset="utf-8">
   
    
-    <title>Succes-page</title>
+    <title>Home</title>
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/signin.css" rel="stylesheet">
@@ -19,10 +19,11 @@
         <div class="navbar-header">
           
           <a class="navbar-brand active" href="#">Quiz app </a>
+          <a class="navbar-brand active" href="#"> logged in as : <?php echo $_SESSION['usernaam'];?></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
+           
           </ul>
           <ul class="nav navbar-nav navbar-right">
            <li><a href="index.php?action=logout">logout</a></li>
@@ -34,7 +35,7 @@
         <?php 
         if(isset($_SESSION['usernaam'])){
 
-          echo "<p>Welkom</p> ". $_SESSION['usernaam'];
+          echo "<p>Welkom</p> ";
         } else {
           header('location:index.php');  
         }

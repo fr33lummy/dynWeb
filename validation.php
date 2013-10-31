@@ -11,11 +11,27 @@ class Validator
                      $statusMessage[$key] = $key . " mag niet leeg zijn";
 
                 } else {
-                    $statusMessage[$key] = $key . " is moet " . $min . " tekens lang zijn";
+                    $statusMessage[$key] = $key . " moet " . $min . " tekens lang zijn";
                 }
                 $valid = false;
             }
         }
+        return $valid;
+    }
+
+    public function isValidUser($key, $min){
+        global $statusMessage;
+
+        $valid = $this->isValidLength($key,$min);
+        if($valid == true){
+            if($key == 'wouter'){
+                $valid = true;
+            } else {
+                $valid = false;
+                $statusMessage[$key] = $key . " is geen geregistreerde gebruiker";
+
+            }
+        } 
         return $valid;
     }
 
@@ -31,7 +47,6 @@ class Validator
             }
          }
         return $valid;
-
     }
 
     public function isValidEmail($key)

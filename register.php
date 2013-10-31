@@ -22,7 +22,7 @@
 
       <form class="form-signin well" method="POST" action="index.php?action=registreer">
 
-              <div class="well" id ="status">       
+              <div id ="status">       
                  <?php foreach ($this->_statusMessage as $message) {
                 echo $message ; ?>  </br> <?php
               }?>
@@ -39,6 +39,7 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             <a href="index.php?" id="registreer"> or click here to login</a>
+      <p>registreren doet voor de moment nog nix ;)</p>
 
       </form>
      

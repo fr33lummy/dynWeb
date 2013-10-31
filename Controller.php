@@ -79,7 +79,7 @@ class Controller
             & $this->_validator->isValidLength('achternaam',1)
         ) {
            // $this->_userMapper->add($this->_object);
-
+            $_SESSION['usernaam'] = $naam;
             //$this->users = $this->_userMapper->getAll();
             return 'succes.php';
         } else {
@@ -104,7 +104,7 @@ class Controller
 		$naam = $this->_safeParameters['usernaam'];
         $passwoord =  $this->_safeParameters['passwoord'];
 
-        if ($this->_validator->isValidLength('usernaam',4)
+        if ($this->_validator->isValidUser($naam)
             & $this->_validator->isValidLength('passwoord',4)
         ) {
 			

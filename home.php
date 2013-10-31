@@ -23,8 +23,7 @@
              
               <div >       
                  <?php foreach ($this->_statusMessage as $message) {
-                echo $message ; ?>  </br> <?php
-              }?>
+                echo $message ; ?>  </br> <?php }?>
               </div>
 
         <h2 class="form-signin-heading">Please sign in</h2>
