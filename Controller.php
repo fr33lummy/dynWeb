@@ -49,11 +49,12 @@ class Controller
             $nextPage = $this->newRegistration();
         } elseif ($this->_action == 'home') {
             $nextPage = $this->home();
-        } elseif ($hits->_action = 'login'){
+        } elseif ($this->_action = 'login'){
 			$nextPage= $this->login();
-		} else {
-			$nextPage='home.php';
-		}
+		} elseif($this->action='logout'){
+			$nextPage=$this->logout();             
+		} else 
+            $nextPage = 'home.php';
         require_once($nextPage);
 
     }
@@ -74,7 +75,8 @@ class Controller
 
         if ($this->_validator->isValidLength('usernaam',4)
             & $this->_validator->isValidLength('passwoord',4) & $this->_validator->isValidEmail('email') 
-           
+            & $this->_validator->checkPassword('passwoord','passwoord2') & $this->_validator->isValidLength('voornaam',1)
+            & $this->_validator->isValidLength('achternaam',1)
         ) {
            // $this->_userMapper->add($this->_object);
 
@@ -108,6 +110,7 @@ class Controller
 			
             //$this->_userMapper->isValidUser($this->_object);
             //eerste if vervangen door de tweede
+            $_SESSION['usernaam'] = $naam;
 			return 'succes.php';
         } else {
             global $statusMessage;
@@ -116,6 +119,11 @@ class Controller
             return 'home.php';
         }
 	}
+
+    private function logout(){
+        session_destroy();
+        return  'home.php';
+    }
 }
 ?>
 

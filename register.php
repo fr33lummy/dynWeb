@@ -9,9 +9,7 @@
     <link rel="shortcut icon" href="">
 
     <title>Register</title>
-
     <link href="css/bootstrap.css" rel="stylesheet">
-
     <link href="css/signin.css" rel="stylesheet">
 
 
@@ -20,17 +18,16 @@
   <body>
 
     <div class="container">
+
+
       <form class="form-signin well" method="POST" action="index.php?action=registreer">
 
-  <div >
-                <?php echo $this->_statusMessage['passwoord'];?>
-              </br>
-                 
-                <?php echo $this->_statusMessage['usernaam'];?>
-                 </br>
-                 
-                <?php echo $this->_statusMessage['email'];?>
+              <div class="well" id ="status">       
+                 <?php foreach ($this->_statusMessage as $message) {
+                echo $message ; ?>  </br> <?php
+              }?>
               </div>
+
 
         <h2 class="form-signin-heading">Enter the fields to register</h2>
         <input type="text" name="voornaam" class="form-control" placeholder="First Name" autofocus>

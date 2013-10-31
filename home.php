@@ -21,11 +21,10 @@
 
       <form class="form-signin well" method="POST" action="index.php?action=login">
              
-              <div >
-                <?php echo $this->_statusMessage['passwoord'];?>
-              </br>
-                 
-                <?php echo $this->_statusMessage['usernaam'];?>
+              <div >       
+                 <?php foreach ($this->_statusMessage as $message) {
+                echo $message ; ?>  </br> <?php
+              }?>
               </div>
 
         <h2 class="form-signin-heading">Please sign in</h2>

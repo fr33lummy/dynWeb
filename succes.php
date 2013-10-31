@@ -22,15 +22,24 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            
           </ul>
           <ul class="nav navbar-nav navbar-right">
-           
+           <li><a href="index.php?action=logout">logout</a></li>
           </ul>
         </div>
       </div>
 
       <div class="jumbotron">
-        <h1>Succes</p>
+        <?php 
+        if(isset($_SESSION['usernaam'])){
+
+          echo "<p>Welkom</p> ". $_SESSION['usernaam'];
+        } else {
+          header('location:index.php');  
+        }
+      ?>
+        
       </div>
 
     </div> 

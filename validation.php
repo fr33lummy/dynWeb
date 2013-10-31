@@ -7,7 +7,12 @@ class Validator
         $valid = true;
         if (isset($_POST[$key])) {
             if (strlen($_POST[$key]) < $min) {
-                $statusMessage[$key] = $key . " is moet " . $min . " tekens lang zijn";
+                if($min == 1){
+                     $statusMessage[$key] = $key . " mag niet leeg zijn";
+
+                } else {
+                    $statusMessage[$key] = $key . " is moet " . $min . " tekens lang zijn";
+                }
                 $valid = false;
             }
         }
