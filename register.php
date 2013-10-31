@@ -42,7 +42,7 @@
       <p>registreren doet voor de moment nog nix ;)</p>
 
       </form>
-     
+
     </div> 
   </body>
 </html>

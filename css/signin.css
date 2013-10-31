@@ -4,7 +4,9 @@ body {
   background-color: #eee;
 }
 
-
+.navbar{
+  background-color:#007fff;
+}
 
 .form-signin {
   max-width: 330px;
