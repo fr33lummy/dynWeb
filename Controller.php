@@ -105,7 +105,7 @@ class Controller
         $passwoord =  $this->_safeParameters['passwoord'];
 
         if ($this->_validator->isValidUser($naam)
-            & $this->_validator->isValidLength('passwoord',4)
+            & $this->_validator->isValidPass($passwoord)
         ) {
 			
             //$this->_userMapper->isValidUser($this->_object);
@@ -121,6 +121,7 @@ class Controller
 	}
 
     private function logout(){
+
         session_destroy();
         return  'home.php';
     }

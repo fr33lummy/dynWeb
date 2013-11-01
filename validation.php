@@ -19,6 +19,21 @@ class Validator
         return $valid;
     }
 
+public function isValidPass($key, $min){
+     global $statusMessage;
+
+        $valid = $this->isValidLength($key,$min);
+        if($valid == true){
+            if($key == 'wouter'){
+                $valid = true;
+            } else {
+                $valid = false;
+                $statusMessage[$key] = "je hebt een fout passwoord opgegeven";
+
+            }
+        } 
+        return $valid;
+}
     public function isValidUser($key, $min){
         global $statusMessage;
 
